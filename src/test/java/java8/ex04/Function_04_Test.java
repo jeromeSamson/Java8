@@ -71,12 +71,8 @@ public class Function_04_Test {
 
         // TODO invoquer la méthode filter pour que le test soit passant
         // TODO chaîner les prédicats adult, lastnameIsFrance et firstnameIsArmor avec la méthode and
-        List<Person> result = new ArrayList<>();
-        for(Person p:personList){
-        	if(lastnameIsFrance.test(p)&&firstnameIsArmor.test(p)){
-        		result.add(p);
-        	}
-        }
+        List<Person> result = filter(personList, adult.and(firstnameIsArmor).and(lastnameIsFrance));
+        
         assert result.size() == 1;
         assert result.get(0).getFirstname().equals("Armor");
         assert result.get(0).getLastname().equals("France");
