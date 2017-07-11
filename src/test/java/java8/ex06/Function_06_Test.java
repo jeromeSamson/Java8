@@ -41,7 +41,6 @@ public class Function_06_Test {
 
         expectedException.expect(NullPointerException.class);
         expectedException.expectMessage("require non null object");
-    	Person p = new Person("Jhon","Doe",35,"test");
 
         // TODO compléter le test unitaire pour qu'il soit passant
     	Supplier<String> supplier = () -> "require non null object";

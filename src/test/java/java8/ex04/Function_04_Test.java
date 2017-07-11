@@ -39,12 +39,8 @@ public class Function_04_Test {
         List<Person> personList = Data.buildPersonList();
 
         // TODO invoquer la méthode filter pour que le test soit passant
-        List<Person> result = new ArrayList<>();
-        for(Person p:personList){
-        	if(adult.test(p)){
-        		result.add(p);
-        	}
-        }
+        List<Person> result = filter(personList,adult);
+       
       
 
         assert result.size() == 4;
@@ -56,12 +52,12 @@ public class Function_04_Test {
     // tag::predicateand[]
     // TODO compléter la fonction
     // TODO le prédicat vérifie que le nom est "France"
-    Predicate<Person> lastnameIsFrance = p -> p.getLastname().equals("France")?true:false;
+    Predicate<Person> lastnameIsFrance = p -> p.getLastname().equals("France");
 
 
     // TODO compléter la fonction
     // TODO le prédicat vérifie que le prénom est "Armor"
-    Predicate<Person> firstnameIsArmor = p -> p.getFirstname().equals("Armor")?true:false;
+    Predicate<Person> firstnameIsArmor = p -> p.getFirstname().equals("Armor");
     // end::predicateand[]
 
     @Test

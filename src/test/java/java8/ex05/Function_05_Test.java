@@ -42,8 +42,6 @@ public class Function_05_Test {
 //            verifyAge.accept(p);
 //            verifyPassword.accept(p);
 //        }        
-        personList.forEach(verifyAge);
-        personList.forEach(verifyPassword);
         
         personList.forEach(verifyAge.andThen(verifyPassword));
     }
